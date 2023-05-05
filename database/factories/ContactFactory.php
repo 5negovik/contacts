@@ -2,13 +2,14 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Facades\Hash;
+
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
  */
-class UserFactory extends Factory
+class ContactFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,8 +19,11 @@ class UserFactory extends Factory
     public function definition(): array
     {
         return [
-            'email' => $this->faker->unique()->randomElement(['test01@mail.ru', 'test02@mail.ru', 'test03@mail.ru']),
-            'password' => Hash::make('123'),
+            'user_id' => User::query()->inRandomOrder()->first()->id,
+            'name' => $this->faker->firstName() .' '. $this->faker->lastName(),
+            'tel' => $this->faker->phoneNumber(),
+            'email' => $this->faker->unique()->safeEmail(),
+            'birthday' => $this->faker->date(),
             //'remember_token' => Str::random(10),
         ];
     }
