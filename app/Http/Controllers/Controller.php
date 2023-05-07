@@ -47,7 +47,7 @@ class Controller extends BaseController
 //            $data['email'] = $request->email;
 //            $data['password'] = $request->password;
 //            $data['device_name'] = $request->device_name;
-//            User::query()->create($data);
+//            $currentUser = User::query()->create($data);
 //            return $currentUser->createToken($request->device_name)->plainTextToken;
 
 
