@@ -46,7 +46,6 @@ class Controller extends BaseController
 //            если электронная поча не найдена, можно создать нового пользователя..
 //            $data['email'] = $request->email;
 //            $data['password'] = $request->password;
-//            $data['device_name'] = $request->device_name;
 //            $newUser = User::query()->create($data);
 //            return $newUser->createToken($request->device_name)->plainTextToken;
 
